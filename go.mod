@@ -1,4 +1,4 @@
-module github.com/SokonSZL/arelog
+module github.com/sokonszl/arelog
 
 go 1.16
 
