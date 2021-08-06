@@ -5,7 +5,7 @@ import (
 	"log"
 	//	"reflect"
 
-	cfg "arelog/cfgProv"
+	cfg "github.com/SokonSZL/arelog/cfgProv"
 
 	"github.com/mum4k/termdash"
 	"github.com/mum4k/termdash/align"
