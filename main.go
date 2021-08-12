@@ -6,10 +6,10 @@ import (
 	//	"reflect"
 
 	cfg "github.com/sokonszl/arelog/cfgProv"
+	//	lWrt "github.com/sokonszl/arelog/logWriter"
 
 	"github.com/mum4k/termdash"
 	"github.com/mum4k/termdash/align"
-	"github.com/mum4k/termdash/cell"
 	"github.com/mum4k/termdash/container"
 	"github.com/mum4k/termdash/keyboard"
 	"github.com/mum4k/termdash/linestyle"
@@ -46,9 +46,10 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		textinput.LabelAlign(align.HorizontalLeft),
 		textinput.MaxWidthCells(20),
 		textinput.ExclusiveKeyboardOnFocus(),
-		textinput.FillColor(cell.ColorTeal),
-		textinput.CursorColor(cell.ColorSilver),
-		textinput.HighlightedColor(cell.ColorFuchsia),
+		textinput.FillColor(c.GetColorOf(cfg.TextFieldFill)),
+		textinput.CursorColor(c.GetColorOf(cfg.TextFieldCursor)),
+		textinput.HighlightedColor(c.GetColorOf(cfg.TextFieldHighlight)),
+		textinput.TextColor(c.GetColorOf(cfg.TextFieldText)),
 	)
 	if err != nil {
 		return err
@@ -59,6 +60,10 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		textinput.LabelAlign(align.HorizontalLeft),
 		textinput.MaxWidthCells(20),
 		textinput.ExclusiveKeyboardOnFocus(),
+		textinput.FillColor(c.GetColorOf(cfg.TextFieldFill)),
+		textinput.CursorColor(c.GetColorOf(cfg.TextFieldCursor)),
+		textinput.HighlightedColor(c.GetColorOf(cfg.TextFieldHighlight)),
+		textinput.TextColor(c.GetColorOf(cfg.TextFieldText)),
 	)
 	if err != nil {
 		return err
@@ -69,6 +74,10 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		textinput.LabelAlign(align.HorizontalLeft),
 		textinput.MaxWidthCells(20),
 		textinput.ExclusiveKeyboardOnFocus(),
+		textinput.FillColor(c.GetColorOf(cfg.TextFieldFill)),
+		textinput.CursorColor(c.GetColorOf(cfg.TextFieldCursor)),
+		textinput.HighlightedColor(c.GetColorOf(cfg.TextFieldHighlight)),
+		textinput.TextColor(c.GetColorOf(cfg.TextFieldText)),
 	)
 	if err != nil {
 		return err
@@ -81,6 +90,10 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		textinput.PlaceHolder(txCall),
 		textinput.MaxWidthCells(20),
 		textinput.ExclusiveKeyboardOnFocus(),
+		textinput.FillColor(c.GetColorOf(cfg.TextFieldFill)),
+		textinput.CursorColor(c.GetColorOf(cfg.TextFieldCursor)),
+		textinput.HighlightedColor(c.GetColorOf(cfg.TextFieldHighlight)),
+		textinput.TextColor(c.GetColorOf(cfg.TextFieldText)),
 	)
 	if err != nil {
 		return err
@@ -91,6 +104,10 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		textinput.LabelAlign(align.HorizontalLeft),
 		textinput.MaxWidthCells(20),
 		textinput.ExclusiveKeyboardOnFocus(),
+		textinput.FillColor(c.GetColorOf(cfg.TextFieldFill)),
+		textinput.CursorColor(c.GetColorOf(cfg.TextFieldCursor)),
+		textinput.HighlightedColor(c.GetColorOf(cfg.TextFieldHighlight)),
+		textinput.TextColor(c.GetColorOf(cfg.TextFieldText)),
 	)
 	if err != nil {
 		return err
@@ -101,6 +118,10 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		textinput.LabelAlign(align.HorizontalLeft),
 		textinput.MaxWidthCells(20),
 		textinput.ExclusiveKeyboardOnFocus(),
+		textinput.FillColor(c.GetColorOf(cfg.TextFieldFill)),
+		textinput.CursorColor(c.GetColorOf(cfg.TextFieldCursor)),
+		textinput.HighlightedColor(c.GetColorOf(cfg.TextFieldHighlight)),
+		textinput.TextColor(c.GetColorOf(cfg.TextFieldText)),
 	)
 	if err != nil {
 		return err
@@ -111,6 +132,10 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		textinput.LabelAlign(align.HorizontalLeft),
 		textinput.MaxWidthCells(20),
 		textinput.ExclusiveKeyboardOnFocus(),
+		textinput.FillColor(c.GetColorOf(cfg.TextFieldFill)),
+		textinput.CursorColor(c.GetColorOf(cfg.TextFieldCursor)),
+		textinput.HighlightedColor(c.GetColorOf(cfg.TextFieldHighlight)),
+		textinput.TextColor(c.GetColorOf(cfg.TextFieldText)),
 	)
 	if err != nil {
 		return err
@@ -121,6 +146,10 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		textinput.LabelAlign(align.HorizontalLeft),
 		textinput.MaxWidthCells(20),
 		textinput.ExclusiveKeyboardOnFocus(),
+		textinput.FillColor(c.GetColorOf(cfg.TextFieldFill)),
+		textinput.CursorColor(c.GetColorOf(cfg.TextFieldCursor)),
+		textinput.HighlightedColor(c.GetColorOf(cfg.TextFieldHighlight)),
+		textinput.TextColor(c.GetColorOf(cfg.TextFieldText)),
 	)
 	if err != nil {
 		return err
@@ -132,8 +161,8 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		"Log",
 		nil,
 		button.Key(keyboard.KeyEnter),
-		button.FillColor(cell.ColorTeal),
-		button.FocusedFillColor(cell.ColorMagenta),
+		button.FillColor(c.GetColorOf(cfg.ButtonPrimary)),
+		button.FocusedFillColor(c.GetColorOf(cfg.ButtonSecondary)),
 		button.DisableShadow(),
 		button.Height(1),
 		button.Width(logRemoveWidth),
@@ -146,8 +175,8 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		"Remove",
 		nil,
 		button.Key(keyboard.KeyEnter),
-		button.FillColor(cell.ColorTeal),
-		button.FocusedFillColor(cell.ColorMagenta),
+		button.FillColor(c.GetColorOf(cfg.ButtonPrimary)),
+		button.FocusedFillColor(c.GetColorOf(cfg.ButtonSecondary)),
 		button.DisableShadow(),
 		button.Height(1),
 		button.Width(logRemoveWidth),
@@ -161,8 +190,8 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 		},
 		button.Key(keyboard.KeyEnter),
 		button.DisableShadow(),
-		button.FillColor(cell.ColorTeal),
-		button.FocusedFillColor(cell.ColorMagenta),
+		button.FillColor(c.GetColorOf(cfg.ButtonPrimary)),
+		button.FocusedFillColor(c.GetColorOf(cfg.ButtonSecondary)),
 		button.Height(1),
 		button.Width(26),
 	)
@@ -184,11 +213,14 @@ func (form *QSOForm) prefillForm(c *cfg.Config, cancel context.CancelFunc) error
 
 func (form *QSOForm) makeMainLayout(c *container.Container) error {
 	return c.Update("ROOT",
-		container.KeyFocusNext(keyboard.KeyTab),
-		container.KeyFocusGroupsNext(keyboard.KeyArrowDown, 1),
-		container.KeyFocusGroupsPrevious(keyboard.KeyArrowUp, 1),
-		container.KeyFocusGroupsNext(keyboard.KeyArrowRight, 2),
-		container.KeyFocusGroupsPrevious(keyboard.KeyArrowLeft, 2),
+		container.KeyFocusNext(keyboard.KeyArrowDown),
+		container.KeyFocusPrevious(keyboard.KeyArrowUp),
+		/*
+			container.KeyFocusGroupsNext(keyboard.KeyArrowDown, 1),
+			container.KeyFocusGroupsPrevious(keyboard.KeyArrowUp, 1),
+			container.KeyFocusGroupsNext(keyboard.KeyArrowRight, 2),
+			container.KeyFocusGroupsPrevious(keyboard.KeyArrowLeft, 2),
+		*/
 		container.Border(linestyle.Light),
 		container.SplitVertical(
 			container.Left(
@@ -328,10 +360,14 @@ func (form *QSOForm) makeMainLayout(c *container.Container) error {
 
 func main() {
 	conf := &cfg.Config{
-		LogSavePath:          "",
-		TXCall:               "N0CALL",
-		ButtonPrimaryColor:   "Teal",
-		ButtonSecondaryColor: "Fuchsia",
+		LogSavePath:             "",
+		TXCall:                  "N0CALL",
+		ButtonPrimaryColor:      "Teal",
+		ButtonSecondaryColor:    "Fuchsia",
+		TextFieldTextColor:      "White",
+		TextFieldFillColor:      "Navy",
+		TextFieldHighlightColor: "Black",
+		TextFieldCursorColor:    "Silver",
 	}
 
 	t, err := tcell.New()
